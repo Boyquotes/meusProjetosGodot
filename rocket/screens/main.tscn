@@ -1,0 +1,125 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://images/rocket.png" type="Texture" id=2]
+[ext_resource path="res://images/tower.png" type="Texture" id=3]
+[ext_resource path="res://images/explosion.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 255, 139 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 255, 0, 255, 139 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 510, 0, 255, 139 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 765, 0, 255, 139 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 1020, 0, 255, 139 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 1275, 0, 255, 139 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 1530, 0, 255, 139 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 280, 222 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 280, 0, 280, 222 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 222, 280, 222 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 280, 222, 280, 222 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": false,
+"name": "explosion",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 120, 108 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 59.9999, 300 )
+
+[node name="main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="turtlecode" type="AnimatedSprite" parent="."]
+position = Vector2( 77, 129 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 5 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 85, 456 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 14 )
+
+[node name="turtlevector" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 85, 455 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 5 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="tower1" type="Sprite" parent="."]
+position = Vector2( 943, 123 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 945, 445 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.000244141, -3.33313 )
+shape = SubResource( 6 )
+
+[node name="tower2" type="Sprite" parent="Area2D"]
+texture = ExtResource( 3 )
+
+[node name="buttonstart" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 442.0
+margin_top = 525.0
+margin_right = 577.0
+margin_bottom = 585.0
+text = "START"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="buttonstart" to="." method="_on_buttonstart_pressed"]
