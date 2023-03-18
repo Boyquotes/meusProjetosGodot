@@ -1,8 +1,0 @@
-[gd_resource type="DynamicFont" load_steps=2 format=2]
-
-[sub_resource type="DynamicFontData" id=1]
-
-[resource]
-size = 26
-outline_color = Color( 0.368627, 0.643137, 0.462745, 1 )
-font_data = SubResource( 1 )
