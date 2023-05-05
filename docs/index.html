@@ -1,50 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entregas</title>
-    <link rel="stylesheet" href=style.css>
+    <title>Portifolio </title>
+    <!---Link alternativo de CSS-->
+    <link rel="stylesheet" type="text/css" href=style.css>
+    <!---Link de ícones-->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!---Link remixicon--->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!---Fontes Google--->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <ul class="Juntar">
-            <li>
-                <a href="https://github.com/pelinsarix"> GitHub </a>     
-            </li>
-            <li>
-                <h1 class="Titulo">Gabriel Pelinsari Ribeiro</h1>
-            </li>
-            <li>
-                <a href="https://wa.link/fd6l7t"> Contato </a>     
-            </li>
+    <header>
+        <a href="#" class="logo">Gabriel Pelinsari</a>
+
+        <ul class="navlist">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Projetos</a></li>
+            <li><a href="#">Contato</a></li>
+
         </ul>
-    </nav>
-    <div class="Center">
-        <header>
-            <img src="./img/Gabriel_Pelinsari.jpg">
-        </header>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+    </header>
+
+    <section class="sobre">
+        <div class="sobre-text">
+            <h1>SOBRE MIM</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur odio eu massa finibus pharetra. Etiam et ante dictum, sollicitudin neque a, commodo est. Maecenas vitae libero dui. Cras facilisis imperdiet elit eget semper. Suspendisse commodo vehicula dui vel viverra. Proin iaculis, dolor suscipit pellentesque ultrices, erat purus congue mauris, eu venenatis odio ex vitae massa. Curabitur justo quam, bibendum sit amet condimentum vitae, tempus eget nibh.</p>
+            <a href="#">Teste</a>
+            <a href="#" class="ctaa"><i class="ri-arrow-down-s-fill"></i>Teste</a>
+        </div>
+
+        <div class="sobre-img">
+            <img src="img\Gabriel_Pelinsari.jpg">
+        </div>
+
+    </section>
+
+    <div class="icons">
+        <a href="#"><i class="ri-whatsapp-line"></i></a>
+        <a href="#"><i class="ri-linkedin-line"></i></a>
+        <a href="#"><i class="ri-github-line"></i></a>
     </div>
-    <div>
-        <h1 class="Center">Projetos</h1>
-    </div>
-    <ul class="atividadestext">
-        <li id="ativ">
-                <h3>
-                    <a href="./lacos/index.html">Laços</a>
-                </h3>
-                <h3>
-                    <a href="./ppt/index.html">Pedra, Papel e Tesoura</a>
-                </h3>
-                <h3>
-                    <a href="./rocket/index.html">Foguete</a>
-                </h3>
-                <h3>
-                    <a href="./schrodinger/index.html">Schrodinger</a>
-                </h3>
-            </ul>
-        </li>
-    </ul>
+
+    <!---Link do JavaScript--->
+    <script src="script.js"></script>
 </body>
 </html>
